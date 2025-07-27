@@ -1,0 +1,44 @@
+import Users from "./components/Users"
+import Button from "./components/Button"
+import {type Info,type AdminInformation} from "./types"
+import AdminInfo from "./components/AdminInfo"
+import UserrInfo from "./components/UserInfo"
+
+import AdminTwoInfo from "./components/AdminTwoInfo"
+import Counter from "./components/Counter"
+import UserTwoInfo from "./components/UserTwoInfo"
+
+
+const App = () => {
+  const user:Info = {
+    id:1,
+    name:'john',
+    email:'john@gmail.com'
+  }
+  const admin:AdminInformation = {
+    id:2,
+    name:'gennie',
+    email:'gennie@gmail.com',
+    role:'admin',
+    lastlogin:new Date()
+  }
+  return (
+    <div>
+      <Users name="alex" age={20} isStudent={true}/> 
+      {/* <Users>
+          <p>hello</p>
+      </Users> */}
+      <Button label='click' onClick={()=>console.log('clicked')} disabled={false}/> 
+      <UserrInfo user={user}/>
+      <AdminInfo admin={admin}/>
+      <h1>User info 👇</h1>
+      <UserTwoInfo username="alex" email="alex@gmail.com" age={20} location ={['earth','usa']}/>
+      <h1>Admin info 👇</h1>
+      <AdminTwoInfo username="alex" email="alex@gmail.com" age={20} location ={['mars','unknown']} admin="yes"/>
+      <Counter/>
+    </div> 
+  )
+}
+
+export default App
+---------------------------------------
