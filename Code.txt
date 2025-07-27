@@ -8,6 +8,12 @@ import AdminTwoInfo from "./components/AdminTwoInfo"
 import Counter from "./components/Counter"
 import UserTwoInfo from "./components/UserTwoInfo"
 
+ import TodoList from "./TodoList"
+ import UserProfile from "./UserProfile"
+ import Form from "./components/Form"
+ import Eventhandling from "./Eventhandling"
+ import ContactForm from "./ContactForm"
+ import FocusInput from "./FocusInput"
 
 const App = () => {
   const user:Info = {
@@ -36,9 +42,15 @@ const App = () => {
       <h1>Admin info 👇</h1>
       <AdminTwoInfo username="alex" email="alex@gmail.com" age={20} location ={['mars','unknown']} admin="yes"/>
       <Counter/>
+      <UserProfile/>
+      <TodoList/>
+      <Form/>
+      <FocusInput/>
+      <ContactForm/>
+      <Eventhandling/>
     </div> 
   )
 }
 
 export default App
----------------------------------------
+// ---------------------------------------
