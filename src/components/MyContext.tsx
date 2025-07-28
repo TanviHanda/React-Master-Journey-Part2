@@ -1,37 +1,13 @@
-import { type FC, type ReactNode, useState, createContext } from "react";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import './index.css'; // Ensure Tailwind is imported
+import MyProvider from './components/MyProvider'; // Adjust path as needed
 
-interface MyContextProps {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
-}
-
-export const MyContext = createContext<MyContextProps>({
-  count: 0,
-  increment: () => {},
-  decrement: () => {},
-});
-
-interface MyProviderProps {
-  children: ReactNode;
-}
-
-const MyProvider: FC<MyProviderProps> = ({ children }) => {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount((prev) => prev + 1);
-  };
-
-  const decrement = () => {
-    setCount((prev) => prev - 1);
-  };
-
-  return (
-    <MyContext.Provider value={{ count, increment, decrement }}>
-      {children}
-    </MyContext.Provider>
-  );
-};
-
-export default MyProvider;
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <MyProvider>
+      <App />
+    </MyProvider>
+  </React.StrictMode>
+);
