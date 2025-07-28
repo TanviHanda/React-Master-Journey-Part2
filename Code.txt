@@ -16,6 +16,7 @@ import Eventhandling from "./Eventhandling";
 import ContactForm from "./ContactForm";
 import FocusInput from "./FocusInput";
 import MyComponent from "./components/MyComponent"
+import UserList from "./components/UserList"
 const App = () => {
   const user: Info = {
     id: 1,
@@ -84,9 +85,51 @@ const App = () => {
       <Counter3 />
       <hr/>
       <MyComponent/>
+      <hr/>
+       <UserList/>
     </div>
   );
 };
 
 export default App;
 // ---------------------------------------
+const App = () => {
+  return (
+    <div>
+      <button
+        className="btn"
+        onClick={() =>
+          (document.getElementById("my_modal_1") as HTMLDialogElement)?.showModal() 
+        }
+      >
+        open modal
+      </button>
+
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click the button below to close</p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+  );
+};
+
+export default App;
+---------------------------------------
+import { Flex, Text, Button } from "@radix-ui/themes";
+
+export default function App() {
+	return (
+		<Flex direction="column" gap="2">
+			<Text>Hello from Radix Themes</Text>
+			<Button>Let's go</Button>
+		</Flex>
+	);
+}
