@@ -1,56 +1,92 @@
-import Users from "./components/Users"
-import Button from "./components/Button"
-import {type Info,type AdminInformation} from "./types"
-import AdminInfo from "./components/AdminInfo"
-import UserrInfo from "./components/UserInfo"
-
-import AdminTwoInfo from "./components/AdminTwoInfo"
-import Counter from "./components/Counter"
-import UserTwoInfo from "./components/UserTwoInfo"
-
- import TodoList from "./TodoList"
- import UserProfile from "./UserProfile"
- import Form from "./components/Form"
- import Eventhandling from "./Eventhandling"
- import ContactForm from "./ContactForm"
- import FocusInput from "./FocusInput"
-
+import Users from "./components/Users";
+import Button from "./components/Button";
+import { type Info, type AdminInformation } from "./types";
+import AdminInfo from "./components/AdminInfo";
+import UserrInfo from "./components/UserInfo";
+import AdminTwoInfo from "./components/AdminTwoInfo";
+import Counter from "./components/Counter";
+import UserTwoInfo from "./components/UserTwoInfo";
+import Counter1 from "./components/Counter1";
+import Counter2 from "./components/Counter2";
+import Counter3 from "./components/Counter3";
+import TodoList from "./TodoList";
+import UserProfile from "./UserProfile";
+import Form from "./components/Form";
+import Eventhandling from "./Eventhandling";
+import ContactForm from "./ContactForm";
+import FocusInput from "./FocusInput";
+import MyComponent from "./components/MyComponent"
 const App = () => {
-  const user:Info = {
-    id:1,
-    name:'john',
-    email:'john@gmail.com'
-  }
-  const admin:AdminInformation = {
-    id:2,
-    name:'gennie',
-    email:'gennie@gmail.com',
-    role:'admin',
-    lastlogin:new Date()
-  }
+  const user: Info = {
+    id: 1,
+    name: "john",
+    email: "john@gmail.com",
+  };
+  const admin: AdminInformation = {
+    id: 2,
+    name: "gennie",
+    email: "gennie@gmail.com",
+    role: "admin",
+    lastlogin: new Date(),
+  };
   return (
     <div>
-      <Users name="alex" age={20} isStudent={true}/> 
+      <Users name="alex" age={20} isStudent={true} />
       {/* <Users>
           <p>hello</p>
       </Users> */}
-      <Button label='click' onClick={()=>console.log('clicked')} disabled={false}/> 
-      <UserrInfo user={user}/>
-      <AdminInfo admin={admin}/>
+      <Button
+        label="click"
+        onClick={() => console.log("clicked")}
+        disabled={false}
+      />
+      <hr />
+      <UserrInfo user={user} />
+      <p>-----------</p>
+      <AdminInfo admin={admin} />
+      <hr />
       <h1>User info 👇</h1>
-      <UserTwoInfo username="alex" email="alex@gmail.com" age={20} location ={['earth','usa']}/>
+      <UserTwoInfo
+        username="alex"
+        email="alex@gmail.com"
+        age={20}
+        location={["earth", "usa"]}
+      />
+      <p>------</p>
       <h1>Admin info 👇</h1>
-      <AdminTwoInfo username="alex" email="alex@gmail.com" age={20} location ={['mars','unknown']} admin="yes"/>
-      <Counter/>
-      <UserProfile/>
-      <TodoList/>
-      <Form/>
-      <FocusInput/>
-      <ContactForm/>
-      <Eventhandling/>
-    </div> 
-  )
-}
+      <AdminTwoInfo
+        username="alex"
+        email="alex@gmail.com"
+        age={20}
+        location={["mars", "unknown"]}
+        admin="yes"
+      />
+      <hr />
+      <Counter />
+      <hr />
+      <UserProfile />
+      <hr />
+      <TodoList />
+      <hr />
+      <Form />
+      <hr />
+      <FocusInput />
+      <hr />
+      <ContactForm />
+      <hr />
+      <Eventhandling />
+      <hr />
+      <h1>Context Counter App</h1>
+      <Counter1 />
+      <hr />
+      <Counter2 />
+      <hr />
+      <Counter3 />
+      <hr/>
+      <MyComponent/>
+    </div>
+  );
+};
 
-export default App
+export default App;
 // ---------------------------------------

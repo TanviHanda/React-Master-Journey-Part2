@@ -1,5 +1,4 @@
 import  { useState } from 'react'
-
 const Counter = () => {
     const [count,setCount] = useState<number>(0)
 
